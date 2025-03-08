@@ -3,6 +3,7 @@ package com.jesus.springboot.di.app.springboot_di.services;
 import com.jesus.springboot.di.app.springboot_di.models.Product;
 import com.jesus.springboot.di.app.springboot_di.repositories.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,11 @@ import java.util.stream.Collectors;
 public class ProductService implements IProductService {
 
     @Autowired
+    @Qualifier("imp2")
     private IProductRepository repository;
+
+
+
     @Override
     public List<Product> findAll(){
         return repository.findAll().stream().map(p->{

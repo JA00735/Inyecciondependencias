@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
-@Repository
+@Repository("imp2")
 public class ProductRepository implements IProductRepository{
 
     private List<Product> data;
