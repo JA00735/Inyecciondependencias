@@ -1,10 +1,11 @@
 package com.jesus.springboot.di.app.springboot_di.repositories;
 
 import com.jesus.springboot.di.app.springboot_di.models.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
-
+@Repository
 public class ProductRepository implements IProductRepository{
 
     private List<Product> data;

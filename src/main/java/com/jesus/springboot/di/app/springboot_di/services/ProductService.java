@@ -1,15 +1,19 @@
 package com.jesus.springboot.di.app.springboot_di.services;
 
 import com.jesus.springboot.di.app.springboot_di.models.Product;
-import com.jesus.springboot.di.app.springboot_di.repositories.ProductRepository;
+import com.jesus.springboot.di.app.springboot_di.repositories.IProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
+@Service
 public class ProductService implements IProductService {
 
-    private ProductRepository repository = new ProductRepository();
+    @Autowired
+    private IProductRepository repository;
     @Override
     public List<Product> findAll(){
         return repository.findAll().stream().map(p->{
