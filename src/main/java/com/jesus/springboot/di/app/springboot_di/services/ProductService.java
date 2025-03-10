@@ -18,7 +18,7 @@ public class ProductService implements IProductService {
     private Double P;
 
     @Autowired
-    @Qualifier("imp2")
+    @Qualifier("bean")
     private IProductRepository repository;
 
 
